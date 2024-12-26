@@ -1,0 +1,28 @@
+# Recommendation system are mainly of three types ie 
+
+1)Collaborative - Focuses on user preference and behaviour ie user interaction with products and choices made here we mostly use cosine similarity.
+  If the cosine similarity is 1, it means the vectors have the same direction and are perfectly similar.
+  If the cosine similarity is 0, it means the vectors are perpendicular to each other and have no similarity.
+  If the cosine similarity is -1, it means the vectors have opposite directions and are perfectly dissimilar.
+2)Content- Focuses on attributes like cose,quality,features,brand
+3)Hybrid- Uses both feature of content and collaborative.
+
+# Some of the Different Similarities 
+
+1) Cosine similarity - measure of similarity between two non-zero vectors n-dimensional space. 
+   Cosine similarity is often used in text-based data, where it helps measure the similarity of two documents or items based on their features (e.g., ratings, keywords). 
+   Formula:Cosine Similarity (A, B) = (A · B) / (||A|| * ||B||)
+   ||A|| represents the Euclidean norm (magnitude) of vector A, which is the square root of the sum of the squares of its components. 
+   It’s calculated as ||A|| = √(A₁² + A₂² + … + Aₙ²). ||B|| represents the Euclidean norm (magnitude) of vector B, calculated in the same way as ||A||.
+
+2) Euclidean Distance - Measures the "straight line" distance between two points (vectors) in Euclidean space. It's often used in clustering and anomaly detection.
+   Euclidean distance is useful when comparing continuous data, such as measurements in feature space or when clustering.
+   Formula:Distance(A,B)= √ Σ(A(i)-B(i))^2 for i=1 to n
+   A and B are two vectors.
+   A(i) and B(i) are the corresponding components of vectors 
+
+3) Pearson Correlation -  Measures the linear correlation between two variables. It is widely used in collaborative filtering to determine how similarly two users rate items.
+   Pearson correlation is particularly useful in collaborative filtering where ratings are sparse and want to measure how similarly two users behave (e.g., ratings of products).
+   Formula:Similarity(A,B)=Σ(A(i)-mean A(i))*(B(i)-mean B(i))/√ (Σ((A(i)-mean A(i))^2)* √( Σ(B(i)-mean B(i))^2)
+
+   
