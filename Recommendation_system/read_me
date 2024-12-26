@@ -1,3 +1,19 @@
+Abstract:
+	Today, internet has transformed the way we shop, with a vast selection of products available for purchase online. However this convenience comes at a cost, with customers having to sort through countless options, thereby making it an overwhelming and tiring task.
+	To simplify this sorting process, a Recommendation System powered by Artificial Intelligence van efficiently provide personalized recommendations to users. This system used machine learning algorithms that analyse user data, such as search history, purchase behaviour, and preferences, to predict what product the user is interested in. 
+  It  saves time and effort by tailoring suggestions matching the customer’s interests and preferences. This system also encourages the customers to purchase more products, thereby increasing the revenue and profits of the sellers.
+	Recommendation System for Electronic Appliances uses artificial intelligence techniques to deliver personalized product suggestions. By analyzing user preferences, browsing behaviour, and purchase history, the system will generate personalized recommendations that align with individual needs and budgets. 
+  The System also incorporates real-time contextual data, such as user location and seasonal trends to further refine the suggestions.
+	In this recommendation system, we will be using the matrix factorization with Alternating Least Square(ALS) algorithm to calculate the latent features of users and electronic appliances. The ALS algorithm approximates the sparse user-item rating matrix as the product of two dense matrices: the user factor matrix and the item factor matrix. 
+  These matrices represent the hidden features of users and items, with dimensions corresponding to the number of users, items, and latent features.
+  By iteratively optimizing one matrix, while keeping the other fixed, the ALS algorithm discovers numeric factors for each user and item. 
+  This process continues until the algorithm converges, enabling accurate prediction of user preferences for unseen items.
+	To enhance the accuracy and relevance of recommendations, we have incorporated the Wide and Deep Learning model. This model combines the strengths of two complementary models: Wide model and Deep model.
+  
+Wide Model for Memorization : Captures simple feature interactions through generalized linear model, effectively memorizing patterns like feature co-occurrences.
+Deep Model for Generalization : A Dense Neural Network with multiple hidden layers, learns complex, nonlinear relationships by embedding categorical variables into continuous vectors. It generalizes well to unseen items by discovering intricate patterns and relationships in data.
+The combination of the two ensures system can simultaneously “memorize” known relationships and “generalize” to new scenarios. 
+
 # Recommendation system are mainly of three types ie 
 
 1)Collaborative - Focuses on user preference and behaviour ie user interaction with products and choices made here we mostly use cosine similarity.
