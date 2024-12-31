@@ -55,7 +55,7 @@ reviews = [
     "Perfect for everyday use, budget-friendly.",
     "Premium quality, outstanding features."
 ]
-expanded_reviews = reviews * (len(data) // len(reviews)) + reviews[:len(data) % len(reviews)]
+expanded_reviews = reviews * (len(data)) // len(reviews)) + reviews[:len(data) % len(reviews)]
 data['Customer Reviews'] = expanded_reviews
 updated_file_path = 'ndtv_data_with_reviews.csv'
 data.to_csv(updated_file_path, index=False)
