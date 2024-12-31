@@ -40,5 +40,24 @@ The combination of the two ensures system can simultaneously “memorize” know
 3) Pearson Correlation -  Measures the linear correlation between two variables. It is widely used in collaborative filtering to determine how similarly two users rate items.
    Pearson correlation is particularly useful in collaborative filtering where ratings are sparse and want to measure how similarly two users behave (e.g., ratings of products).
    Formula:Similarity(A,B)=Σ(A(i)-mean A(i))*(B(i)-mean B(i))/√ (Σ((A(i)-mean A(i))^2)* √( Σ(B(i)-mean B(i))^2)
+# Dataset Updation
+import pandas as pd
+data = pd.read_csv('ndtv_data_final.csv')
+reviews = [
+    "Excellent performance, worth the price.",
+    "Great battery life, perfect for gaming.",
+    "Amazing camera quality, a bit expensive.",
+    "Good value for money, smooth performance.",
+    "Battery could be better, decent overall.",
+    "Highly recommend for photography lovers.",
+    "Affordable and reliable, good screen quality.",
+    "Sleek design, average battery life.",
+    "Perfect for everyday use, budget-friendly.",
+    "Premium quality, outstanding features."
+]
+expanded_reviews = reviews * (len(data) // len(reviews)) + reviews[:len(data) % len(reviews)]
+data['Customer Reviews'] = expanded_reviews
+updated_file_path = 'ndtv_data_with_reviews.csv'
+data.to_csv(updated_file_path, index=False)
 
    
