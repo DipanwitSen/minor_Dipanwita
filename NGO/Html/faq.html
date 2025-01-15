@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - NGO Donations</title>
+    <link rel="stylesheet" href="ngo-donation.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #ff5722;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .faq-item h3 {
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #333;
+        }
+
+        .faq-item h3:hover {
+            color: #ff5722;
+        }
+
+        .faq-item p {
+            display: none;
+            margin-top: 5px;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
+
+        /* Toggle Icon */
+        .toggle-icon {
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Donation Button */
+        .donation-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .donation-section button {
+            background-color: #ff5722;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .donation-section button:hover {
+            background-color: #e64a19;
+        }
+
+        .donation-section p {
+            font-size: 16px;
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <h1 class="faq-title">Frequently Asked Questions - Donations</h1>
+
+        <div class="faq-item">
+            <h3>
+                How can I donate to the NGO?
+                <span class="toggle-icon">▼</span>
+            </h3>
+            <p>
+                You can donate directly through our website using the "Donate Now" button, or you can transfer funds to our official bank account. All details are available in the "Contact Us" section.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>
+                What types of donations do you accept?
+                <span class="toggle-icon">▼</span>
+            </h3>
+            <p>
+                We accept monetary donations as well as material donations such as food, clothes, books, and medical supplies. Please contact us for specific needs.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>
+                Are donations tax-deductible?
+                <span class="toggle-icon">▼</span>
+            </h3>
+            <p>
+                Yes, donations made to our NGO are eligible for tax benefits under Section 80G of the Income Tax Act. A receipt will be provided for all donations.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>
+                How are the donations utilized?
+                <span class="toggle-icon">▼</span>
+            </h3>
+            <p>
+                Donations are utilized to fund our projects such as education for underprivileged children, food distribution, and healthcare programs. Regular updates and reports are shared with our donors.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>
+                Can I donate anonymously?
+                <span class="toggle-icon">▼</span>
+            </h3>
+            <p>
+                Yes, you can donate anonymously. Simply check the "Anonymous" option when making a donation through our online platform.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>
+                How can I track the impact of my donation?
+                <span class="toggle-icon">▼</span>
+            </h3>
+            <p>
+                We send regular updates to our donors about how their contributions are making a difference. You can also subscribe to our newsletter for detailed reports.
+            </p>
+        </div>
+
+        <!-- Donation Button Section -->
+        <div class="donation-section">
+            <button onclick="window.location.href='donation-page.html'">Donate Now</button>
+            <p>Your support helps us create a brighter future for those in need.</p>
+        </div>
+    </div>
+
+    <script>
+        // Toggle FAQ answers
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            item.querySelector('h3').addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

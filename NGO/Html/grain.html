@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Donation</title>
+    <link rel="stylesheet" href="grain.css">
+</head>
+<body>
+    <header>
+        <h1>Food Donation Drive</h1>
+        <p>Help us fight hunger by donating food to those in need.</p>
+    </header>
+
+    <section class="about">
+        <h2>Why Donate?</h2>
+        <p>
+            Every year, millions of people face food insecurity. Your donation can help provide meals 
+            to families and individuals struggling to access enough food. Together, we can make a 
+            difference and ensure no one goes hungry.
+        </p>
+    </section>
+
+    <section class="donation-form">
+        <h2>Donate Food</h2>
+        <form>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="food-type">Type of Food:</label>
+            <input type="text" id="food-type" name="food-type" placeholder="e.g., Rice, Bread, Fruits" required>
+
+            <label for="quantity">Quantity (kg):</label>
+            <input type="number" id="quantity" name="quantity" placeholder="Enter quantity" required>
+
+            <label for="message">Message (Optional):</label>
+            <textarea id="message" name="message" placeholder="Any special instructions"></textarea>
+
+            <button type="submit">Donate Now</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Thank you for supporting our mission to end hunger.</p>
+    </footer>
+</body>
+</html>

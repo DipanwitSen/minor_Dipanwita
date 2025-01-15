@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            background-color: #ec61f9; 
+            padding: 20px;
+            border-radius: 10px;
+            width: 110%;
+            margin: 0 auto;
+        }
+        h2 {
+            color: rgb(128, 0, 100);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p align="center">
+        <u><b><font size="5" color="purple">STUDENT INTERNSHIP REGISTRATION FORM</font></b></u>
+    </p>
+    <div class="form-container">
+        <form>
+            <label for="fname">FIRST NAME:</label>
+            <input type="text" name="fname" id="fname" size="20">
+            <sub>(max 30 characters a-z and A-Z)</sub>
+            <br><br>
+            <label for="lname">LAST NAME:</label>
+            <input type="text" name="lname" id="lname" size="20">
+            <sub>(max 30 characters a-z and A-Z)</sub>
+            <br><br>
+            <label for="dob">DATE OF BIRTH:</label>
+            <input type="date" name="dob" id="dob">
+            <br><br>
+            <label for="email">EMAIL ID:</label>
+            <input type="text" name="email" id="email" size="30">
+            <br><br>
+            <label for="numb">MOBILE NUMBER:</label>
+            <input type="number" name="numb" id="numb" size="20" maxlength="10">
+            <sub>(10 digit number)</sub>
+            <br><br>
+            <label for="gender">GENDER:</label>
+            <label for="male">MALE</label>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="female">FEMALE</label>
+            <input type="radio" name="gender" id="female" value="female">
+            <br><br>
+            <label for="addr">ADDRESS:</label><br>
+            <textarea name="address" id="addr" rows="4" cols="30"></textarea>
+            <br><br>
+            <label for="cname">CITY:</label>
+            <input type="text" name="cname" id="cname" size="20">
+            <sub>(max 30 characters a-z and A-Z)</sub>
+            <br><br>
+            <label for="pin">PINCODE:</label>
+            <input type="number" name="pin" id="pin" size="20">
+            <sub>(6 digit number)</sub>
+            <br><br>
+            <label for="sname">STATE:</label>
+            <input type="text" name="sname" id="sname" size="20">
+            <sub>(max 30 characters a-z and A-Z)</sub>
+            <br><br>
+            <label for="country">COUNTRY:</label>
+            <input type="text" name="country" id="country" size="20" placeholder="INDIA">
+            <br><br>
+            <label for="hobbies">HOBBIES:</label>
+            <label for="Drawing">Drawing</label>
+            <input type="checkbox" name="dr" id="dr" value="yes">
+            <label for="Singing">Singing</label>
+            <input type="checkbox" name="sing" id="sing" value="yes">
+            <label for="Dancing">Dancing</label>
+            <input type="checkbox" name="dance" id="dance" value="yes">
+            <label for="Sketching">Sketching</label>
+            <input type="checkbox" name="sket" id="sket" value="yes"><br>
+            <label for="Others">Others</label>
+            <input type="checkbox" name="oth" id="oth" value="yes">
+            <input type="text" name="others" id="others" size="20">
+            <br><br>
+            <label for="qualifications">QUALIFICATIONS</label>
+            <table width="100%" border="3">
+                <tr>
+                    <th align="center">Sl.No.</th>
+                    <th align="center">Examination</th>
+                    <th align="center">Board</th>
+                    <th align="center">Percentage</th>
+                    <th align="center">Years of Passing</th>
+                </tr>
+                <tr>
+                    <td align="left">1</td>
+                    <td align="center">Class X</td>
+                    <td><input type="text" name="boardname1" id="boardname1" size="10"></td>
+                    <td><input type="text" name="pername1" id="pername1" size="10"></td>
+                    <td><input type="text" name="ypass1" id="ypass1" size="10"></td>
+                </tr>
+                <tr>
+                    <td align="left">2</td>
+                    <td align="center">Class XII</td>
+                    <td><input type="text" name="boardname2" id="boardname2" size="10"></td>
+                    <td><input type="text" name="pername2" id="pername2" size="10"></td>
+                    <td><input type="number" name="ypass2" id="ypass2" size="10"></td>
+                </tr>
+                <tr>
+                    <td align="left">3</td>
+                    <td align="center">Graduation</td>
+                    <td><input type="text" name="boardname3" id="boardname3" size="10"></td>
+                    <td><input type="text" name="pername3" id="pername3" size="10"></td>
+                    <td><input type="number" name="ypass3" id="ypass3" size="10"></td>
+                </tr>
+                <tr>
+                    <td align="left">4</td>
+                    <td align="center">Masters</td>
+                    <td><input type="text" name="boardname4" id="boardname4" size="10"></td>
+                    <td><input type="text" name="pername4" id="pername4" size="10"></td>
+                    <td><input type="number" name="ypass4" id="ypass4" size="10"></td>
+                </tr>
+            </table>
+            <br><br>
+            <label for="courses">COURSES APPLIED FOR:</label>
+            <label for="BCA">BCA</label>
+            <input type="radio" name="crs" id="BCA" value="BCA">
+            <label for="B.Com">B.Com</label>
+            <input type="radio" name="crs" id="BCom" value="B.Com">
+            <label for="B.Sc">B.Sc</label>
+            <input type="radio" name="crs" id="BSc" value="B.Sc">
+            <label for="B.A">B.A</label>
+            <input type="radio" name="crs" id="BA" value="B.A">
+            <br><br>
+            <p align="center">
+                <input type="button" name="Submit" value="Submit">
+                <input type="button" name="Reset" value="Reset">
+            </p>
+        </form>
+    </div>
+</body>
+</html>

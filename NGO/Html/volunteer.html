@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer</title>
+    <link rel="stylesheet" href="volunteer.css">
+    <style>
+        /* Scroll Container */
+        .scroll-container {
+            background-color: #333;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Images */
+        .scroll-container img {
+            height: 200px;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        /* Hover Effects */
+        .scroll-container img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Section Style */
+        .section {
+            margin: 20px auto;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Form Style */
+        form {
+            margin: 20px auto;
+            max-width: 400px;
+            text-align: left;
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        /* YouTube Embed */
+        .youtube-container {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .youtube-container iframe {
+            width: 100%;
+            max-width: 600px;
+            height: 340px;
+            border: none;
+        }
+    </style>
+</head>
+<body align="center">
+    <h1>VOLUNTEER FOR FUTURE</h1>
+
+    <!-- Scroll Container -->
+    <div class="scroll-container">
+        <img src="image/v1.jpg" alt="Art of Giving">
+        <img src="image/v2.jpg" alt="AIDS Care">
+        <img src="image/v3.jpg" alt="Fooding">
+        <img src="image/v4.jpg" alt="Study">
+    </div>
+
+    <!-- YouTube Link -->
+    <div class="youtube-container">
+        <h2>Watch Our Journey</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Ic-hJgtNTlQ?si=hMmSERJb13BAwzWW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Description Sections -->
+    <div class="section">
+        <h2>AIDS Care</h2>
+        <p>We provide support and care for individuals affected by AIDS, ensuring they receive the medical attention and emotional care they deserve.</p>
+    </div>
+    <div class="section">
+        <h2>Fooding</h2>
+        <p>Our team works tirelessly to ensure no one goes hungry by organizing food drives and distribution in underserved communities.</p>
+    </div>
+    <div class="section">
+        <h2>Study</h2>
+        <p>We promote education by offering free classes and study materials to children in need, empowering them for a better future.</p>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section">
+        <h2>Contact Us</h2>
+        <p>Phone: 7439711097</p>
+    </div>
+
+    <!-- Volunteer Registration Form -->
+    <form>
+        <h2>Register as a Volunteer</h2>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        
+        <label for="message">Why do you want to volunteer?</label>
+        <textarea id="message" name="message" rows="4" placeholder="Write your message here" required></textarea>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

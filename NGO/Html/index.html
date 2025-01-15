@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WINGS</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #add8e6;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            margin-top: 20px;
+        }
+
+        .logo h1 {
+            font-size: 2.5rem;
+            font-family: Arial, sans-serif;
+            margin: 10px 0;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+        }
+
+        .contact-details {
+            text-align: right; 
+            margin-top: 10px;
+            margin-right: 20px;
+        }
+
+        .contact-details a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+        .donate-button {
+            background-color: #477bff;
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        /* Top Navigation Bar */
+       
+        .topnav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .topnav a.active {
+            color: #5774bf;
+        }
+
+
+        .topnav button:hover {
+            background-color: #365bbf;
+        }
+
+        /* Search Bar Styling */
+        .search {
+            --padding: 14px;
+            display: flex;
+            align-items: center;
+            padding: var(--padding);
+            background: #f6f6f6;
+            transition: background 0.25s, box-shadow 0.25s;
+            border-radius: 10px;
+        }
+
+        .search:focus-within {
+            background: #895b5b;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-icon {
+            color: #777;
+        }
+
+        .search-input {
+            font-size: 18px;
+            margin-left: var(--padding);
+            outline: none;
+            border: none;
+            background: transparent;
+            width: 600px;
+        }
+
+        .search-input::placeholder {
+            color: rgba(0, 0, 0, 0.25);
+        }
+
+        .sort {
+            margin-left: 20px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .sort:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px auto;
+            width: 90%;
+        }
+
+        .flip-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            perspective: 1000px;
+        }
+
+        .flipped-image {
+            position: absolute;
+            backface-visibility: hidden;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-container:hover .flipped-image {
+            transform: rotateY(180deg);
+        }
+
+        .description {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .description p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .description a {
+            color: #4b7bf5;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .description a:hover {
+            text-decoration: underline;
+        }
+
+        .hero-text {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 20px auto;
+        }
+
+        .hero-text p {
+            font-size: 1rem;
+            color: #333;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .gallery img {
+            width: 300px;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/logo.jpg" alt="logo of website" class="logo-img">
+            <h1>Wings <span>for Humanity</span></h1>
+        </div>
+        <div class="contact-details">
+            <p><a href="mailto:daliasen16@gmail.com">Email: daliasen16@gmail.com</a></p>
+            <p><a href="tel:7439711097">Phone: 7439711097</a></p>
+            <p>
+                <a 
+                    href="https://www.google.com/maps/dir/?api=1&destination=Save+the+Children+NGO+in+Bhubaneswar,+S-4,+Maitre+Vihar+Rd,+near+Tech+Mahindra+Office,+Maitri+Vihar,+Phase+-II,+Bhubaneswar,+Odisha+751023" 
+                    target="_blank"
+                >
+                    Address: Save the Children NGO in Bhubaneswar, S-4
+                </a>
+            </p>
+            <div class="topnav">
+                <a href="#home">Home</a>
+                <a href="#news">News</a>
+                <a href="#volunteer">Volunteer</a>
+                <a href="#FAQs">FAQs</a>
+                <a href="login.html">Login/Sign Up</a>
+
+                
+                <!-- Search bar -->
+                <input type="text" placeholder="Search..." id="search-bar">
+                <button type="submit">Search</button>
+              </div>
+              
+            <a href="#" class="donate-button">Donate</a>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="flip-container">
+                <img src="image/Study.jpg" alt="Children study" class="flipped-image">
+                <div class="flip-content">
+                    <p>Education: Empower children through quality education.Provide them with books and resources for future.Take Part in our journey!!<a href="education.html" target="_blank">Learn More</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="flip-container">
+                <img src="image/grain.jpg" alt="Food provider" class="flipped-image">
+                <div >
+                    <p>Food: Provide food and nourishment to those in need.With little effort make the dieing live.Take Part in our journey!!  <a href="grain.html" target="_blank">Learn More</a></p>
+                </div>
+            </div>
+
+            <div class="flip-container">
+                <img src="image/blood.jpg" alt="Blood donation" class="flipped-image">
+                <div>
+                    <p>Blood: Support life-saving blood donation campaigns.Give a drop to sustain future .Take Part in our journey!! <a href="blood.html" target="_blank">Learn More</a></p>
+                </div>
+            </div>
+
+            <div class="flip-container">
+                <img src="image/cloth.jpg" alt="Cloth donation" class="flipped-image">
+                <div>
+                    <p>Clothes: Donate clothes to those who need them most.Make not the cold outbeat the heat.Take Part in our journey!! <a href="clothes.html" target="_blank">Learn More</a></p>
+                </div>
+            </div>
+
+            <div class="flip-container">
+                <img src="image/healthcare.jpg" alt="Healthcare" class="flipped-image">
+                <div >
+                    <p>Healthcare: Provide essential healthcare services.Ambulance,medicine required for needy.Take Part in our journey!! <a href="health.html" target="_blank">Learn More</a></p>
+                </div>
+            </div>
+
+            <div class="flip-container">
+                <img src="image/orphan.jpg" alt="Orphan care" class="flipped-image">
+                <div >
+                    <p>Orphan Care: Provide care and support to orphaned children.Take Part in our journey!! <a href="orphan.html" target="_blank">Learn More</a></p>
+                </div>
+            </div>
+
+            <div class="flip-container">
+                <img src="image/elder.jpg" alt="Elderly care" class="flipped-image">
+                <div >
+                    <p>Elder Care: Support elderly individuals in need.Take Part in our journey!! <a href="elder.html" target="_blank">Learn More</a></p>
+                </div>
+            </div>
+
+            <div class="flip-container">
+                <img src="image/women.jpg" alt="Women empowerment" class="flipped-image">
+                <div >
+                    <p>Women Empowerment: Support women in achieving their goals.Take Part in our journey!! <a href="women.html" target="_blank">Learn More</a></p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <div class="hero-text">
+            <h2>Our Mission</h2>
+            <p> Our mission is to create a compassionate and equitable society by supporting those in need through the donation of blood, clothes, and essentials for the elderly. 
+                We strive to bridge the gap between resources and underserved communities, ensuring everyone has access to basic necessities.
+                By fostering a culture of giving, we aim to save lives through blood donations, provide dignity through clothing drives, and extend care to the elderly who require our support.
+                Together, we aspire to build a network of hope and kindness, where every act of generosity makes a tangible difference in the lives of others.
+                </p>
+        </div>
+    </footer>
+    <footer>
+        <div class="hero-text">
+            <h2>Our Programs</h2>
+            <p> we are committed to driving positive change and empowering communities through our diverse range of programs. Our initiatives are designed to address critical social, economic, and environmental challenges, ensuring a holistic approach to development.
+
+                One of our flagship programs focuses on providing education to underprivileged children, bridging the gap between opportunity and access. Through scholarships, free learning resources, and mentorship, we aim to nurture the potential of young minds and create future leaders. Additionally, our health and wellness initiatives prioritize providing medical aid, raising awareness about hygiene, and organizing health camps in rural and underserved areas.
+                
+                Environmental sustainability is another cornerstone of our mission. We actively engage in tree plantation drives, waste management workshops, and campaigns to combat climate change. Our livelihood programs empower women and marginalized groups by offering skill-based training, microfinancing support, and creating employment opportunities.
+                
+                We also extend our support during natural disasters by providing immediate relief and long-term rehabilitation to affected communities. Our programs are rooted in inclusivity, aiming to uplift every individual, regardless of their background.
+                
+                Join us in making a difference and creating a brighter, sustainable future for all. Together, we can transform lives and build resilient communities.
+                </p>
+        </div>
+        <h1>Smile With Us</h1>
+        <div class="gallery">
+            <img src="Waste Management code/img/miss/1.jpg" alt="Image 1">
+            <img src="Waste Management code/img/miss/2.jpg" alt="Image 2">
+            <img src="Waste Management code/img/miss/3.jpg" alt="Image 3">
+            <img src="Waste Management code/img/miss/4.jpg" alt="Image 4">
+            <img src="Waste Management code/img/miss/5.jpg" alt="Image 5">
+            <img src="Waste Management code/img/miss/6.jpg" alt="Image 6">
+        </div>
+    </footer>
+    
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="heading">
+                <h2>Connect With Us</h2>
+                <p>Fill this form, our team will collect your <span>Donation</span> or <span>Wastage</span> from your place.</p>
+            </div>
+            <div class="row">
+            <div class="col-lg-12 mt-5">
+            <form class="contact-form">
+            <div class="row">
+            <div class="col-lg-12">
+            <div class="row">
+            <div class="col-lg-6">
+            <div class="col-lg-12">
+            <div class="form-group">
+            <input type="text" class="form-control" placeholder="Your Name">
+            </div>
+            </div>
+            <div class="col-lg-12">
+            <div class="form-group">
+            <input type="text" class="form-control" placeholder="Mobile No.">
+            </div>
+            </div>
+            <div class="col-lg-12">
+            <div class="form-group">
+            <select name="donation" id="donation">
+            <option value="">Choose Donation or Wastage</option>
+            <option value="food">Food</option>
+            <option value="clothes">Clothes</option>
+            <option value="footware">Footware</option>
+            <option value="books">Books</option>
+            <option value="fund">Fund</option>
+            <option value="gadget">Ele. Gadgets</option>
+            </select>
+            </div>
+            </div>
+                                        
+            </div>
+            <div class="col-lg-6">
+            <div class="form-group">
+            <input type="text" class="form-control" placeholder="Address">
+            </div>
+            <div class="form-group">
+            <textarea class="form-control" name="text" id="" cols="90" rows="1" placeholder="Message"></textarea>
+            </div>
+            </div>
+            <div class="col-md-12 mt-3">
+            <a href="#" class="btn1 mt-5">Submit Details</a>
+            </div>
+            </div>
+            </div>
+            </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    </section>
+
+</body>
+</html>
