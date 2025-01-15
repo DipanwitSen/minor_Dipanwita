@@ -1,0 +1,158 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0177FF;
+}
+
+.logo span {
+    color: #333;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #0177FF;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f9f9f9;
+}
+
+.hero .content h1 {
+    font-size: 42px;
+    color: #0177FF;
+}
+
+.hero .content p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-box button {
+    padding: 10px 20px;
+    background: #0177FF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-box button:hover {
+    background: #005BBB;
+}
+
+.talent-list {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.talent-list h2 {
+    font-size: 32px;
+    color: #0177FF;
+    margin-bottom: 30px;
+}
+
+.talents {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.talent-card {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+}
+
+.talent-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.talent-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.talent-card p {
+    color: #555;
+    margin: 5px 0 15px;
+}
+
+.talent-card button {
+    background: #0177FF;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.talent-card button:hover {
+    background: #005BBB;
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #f1f1f1;
+    margin-top: 20px;
+    color: #666;
+}

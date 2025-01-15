@@ -1,0 +1,105 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    background: linear-gradient(to right, #f8b500, #fc6000);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 1.2rem;
+}
+
+.about {
+    margin: 30px 20px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2rem;
+    color: #fc6000;
+}
+
+.about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.donation-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    margin: 20px 0;
+}
+
+.donation-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #f8b500;
+    text-align: center;
+}
+
+.donation-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.donation-form input,
+.donation-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.donation-form button {
+    background: #fc6000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.donation-form button:hover {
+    background: #f8b500;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1rem;
+    color: #777;
+}
+
+footer p {
+    margin: 0;
+}

@@ -1,0 +1,23 @@
+/* Scroll Container */
+.scroll-container {
+    background-color: #333; /* Dark background */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks between images */
+    padding: 10px;
+    display: flex; /* Flexbox for better layout control */
+    gap: 10px; /* Spacing between images */
+}
+
+/* Images */
+.scroll-container img {
+    height: 200px; /* Adjust as needed */
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+/* Hover Effects */
+.scroll-container img:hover {
+    transform: scale(1.1); /* Zoom in on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add shadow */
+}
