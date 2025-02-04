@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Recommendation System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Mobile Recommendation System</h1>
+        
+        <form id="recommendationForm" class="mb-5">
+            <div class="mb-3">
+                <label for="mobileName" class="form-label">Enter Mobile Name</label>
+                <input type="text" class="form-control" id="mobileName" placeholder="e.g., Galaxy S21" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Get Recommendations</button>
+        </form>
+
+        <div id="recommendationResults" class="mt-5">
+            <h2 class="mb-4">Recommendations</h2>
+            <div id="resultsTable" class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Brand</th>
+                            <th>Price</th>
+                            <th>Processor</th>
+                            <th>RAM</th>
+                            <th>Storage</th>
+                            <th>Camera</th>
+                            <th>Similarity Score</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsBody">
+                        <!-- Recommendations will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#recommendationResults").hide(); // Hide results section initially
+
+            $("#recommendationForm").submit(function (event) {
+                event.preventDefault();
+
+                const mobileName = $("#mobileName").val().trim();
+                if (!mobileName) {
+                    alert("Please enter a mobile name!");
+                    return;
+                }
+
+                // Send POST request to the backend
+                $.ajax({
+                    url: "/recommend",
+                    method: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify({ mobile_name: mobileName }),
+                    success: function (response) {
+                        // Clear the table body
+                        $("#resultsBody").empty();
+
+                        // Populate the table with recommendations
+                        response.forEach((item, index) => {
+                            const row = `
+                                <tr>
+                                    <td>${index + 1}</td>
+                                    <td>${item.name}</td>
+                                    <td>${item.brand}</td>
+                                    <td>${item.price ? `₹${item.price}` : "N/A"}</td>
+                                    <td>${item.specs.processor}</td>
+                                    <td>${item.specs.ram}</td>
+                                    <td>${item.specs.storage}</td>
+                                    <td>${item.specs.camera}</td>
+                                    <td>${item.score}</td>
+                                </tr>
+                            `;
+                            $("#resultsBody").append(row);
+                        });
+
+                        $("#recommendationResults").show(); // Show results section
+                    },
+                    error: function (xhr) {
+                        let errorMessage = "An error occurred. Please try again later.";
+                        if (xhr.responseJSON && xhr.responseJSON.error) {
+                            errorMessage = xhr.responseJSON.error;
+                        }
+                        alert(errorMessage);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
