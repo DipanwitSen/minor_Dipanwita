@@ -1,0 +1,116 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h2>Latest Mobile Phone News</h2>
+        </div>
+        <div class="col-md-4">
+            <select class="form-select" id="brandFilter">
+                <option value="">All Brands</option>
+                <option value="samsung">Samsung</option>
+                <option value="apple">Apple</option>
+                <option value="xiaomi">Xiaomi</option>
+                <option value="oneplus">OnePlus</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="featuredNews" class="mb-5">
+        <div class="card">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="" class="img-fluid rounded-start featured-img" alt="Featured news">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <span class="badge bg-danger mb-2">Featured</span>
+                        <h3 class="card-title" id="featuredTitle">Loading featured news...</h3>
+                        <p class="card-text" id="featuredContent">Please wait while we fetch the latest news.</p>
+                        <p class="card-text"><small class="text-muted" id="featuredTime"></small></p>
+                        <a href="#" id="featuredLink" class="btn btn-primary" target="_blank">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="newsGrid">
+
+    </div>
+
+    <div id="loadingSpinner" class="text-center my-4">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function() {
+        function formatTime(timestamp) {
+            const date = new Date(timestamp);
+            return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+        }
+
+        function createNewsCard(news) {
+            return `
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="${news.image}" class="card-img-top" alt="${news.title}" onerror="this.src='/static/placeholder.jpg'">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">${news.brand}</span>
+                            <h5 class="card-title">${news.title}</h5>
+                            <p class="card-text">${news.summary}</p>
+                            <p class="card-text">
+                                <small class="text-muted">Published: ${formatTime(news.timestamp)}</small>
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="${news.url}" class="btn btn-outline-primary btn-sm" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function fetchNews(brand = '') {
+            $('#loadingSpinner').show();
+            $('#newsGrid').empty();
+            
+            $.ajax({
+                url: "/api/mobile-news" + (brand ? `?brand=${brand}` : ''),
+                method: 'GET',
+                success: function(response) {
+                    if (response.featured) {
+                        $('#featuredTitle').text(response.featured.title);
+                        $('#featuredContent').text(response.featured.summary);
+                        $('#featuredTime').text('Published: ' + formatTime(response.featured.timestamp));
+                        $('#featuredLink').attr('href', response.featured.url);
+                        $('.featured-img').attr('src', response.featured.image);
+                    }
+
+                    response.news.forEach(function(news) {
+                        $('#newsGrid').append(createNewsCard(news));
+                    });
+                },
+                error: function() {
+                    $('#newsGrid').html('<div class="col-12"><div class="alert alert-danger">Error loading news. Please try again later.</div></div>');
+                },
+                complete: function() {
+                    $('#loadingSpinner').hide();
+                }
+            });
+        }
+
+        fetchNews();
+
+        $('#brandFilter').change(function() {
+            fetchNews($(this).val());
+        });
+    });
+</script>
+{% endblock %}
