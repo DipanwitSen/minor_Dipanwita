@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>Register</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f4f4f4;
+            }
+            form {
+                width: 350px;
+                padding: 20px;
+                background: white;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                text-align: center;
+                border-radius: 8px;
+            }
+            input {
+                width: 100%;
+                margin: 10px 0;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+            button {
+                width: 100%;
+                padding: 10px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: 0.3s;
+            }
+            button:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="registerForm">
+            <h2>Register</h2>
+            <input type="text" placeholder="Name" required id="name" />
+            <input type="text" placeholder="Username" required id="username" />
+            <input type="email" placeholder="Email" required id="email" />
+            <button type="button" id="sendOTP">Send OTP</button>
+            <input type="text" placeholder="Enter OTP" required id="otp" disabled/>
+            <input type="password" placeholder="Password" required id="password" />
+            <input type="password" placeholder="Confirm Password" required id="confirmpassword"/>
+            <button type="submit" disabled id="registerButton">Register</button>
+        </form>
+
+        <script>
+            let generatedOTP;
+
+            document.getElementById("sendOTP").addEventListener("click", function() {
+                let email = document.getElementById("email").value;
+                generatedOTP = Math.floor(100000 + Math.random() * 900000);
+                alert(`Your OTP is: ${generatedOTP}`); // In real-world apps, send via email.
+                document.getElementById("otp").disabled = false;
+                document.getElementById("registerButton").disabled = false;
+            });
+
+            document.getElementById("registerForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+                let enteredOTP = document.getElementById("otp").value;
+                let name = document.getElementById("name").value;
+                let username = document.getElementById("username").value;
+                let password = document.getElementById("password").value;
+                let confirmPassword = document.getElementById("confirmpassword").value;
+
+                if (enteredOTP != generatedOTP) {
+                    alert("Invalid OTP!");
+                    return;
+                }
+
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match");
+                    return;
+                }
+
+                const user = { name, username, password };
+                localStorage.setItem(username, JSON.stringify(user));
+                alert("Registration successful! Please login.");
+                window.location.href = "login.html";
+            });
+        </script>
+    </body>
+</html>
